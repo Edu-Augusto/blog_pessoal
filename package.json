@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "Blog para postagem de artigos com editor de texto, painel administrativo com acesso restrito de admin via login",
+  "description": "Blog para postagem de artigos com editor de texto e painel administrativo com acesso restrito de admin via login",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
