@@ -1,0 +1,26 @@
+<%- include partials/header.ejs %>
+<%- include partials/homenav.ejs %>
+    <body>
+        <div class="container">
+            <% articles.forEach(article=>{%>
+                <br>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>
+                                <%= article.title %>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <a class="btn btn-success" href="/<%= article.slug %>">Ler artigo</a>
+                        </div>
+                    </div>
+            <%})%>
+        </div>
+        <div class="container" style="margin-top: 2%;">
+            <div class="col col-12">
+                <a class="btn btn-success" href="/articles/page/2" style="float: right;"> Next>>></a>
+            </div>
+        </div>
+
+    </body>
+<%- include partials/footer.ejs %>
