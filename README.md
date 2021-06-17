@@ -16,7 +16,6 @@
                     <li>MySql 2 => npm install --save mysql2</li>
                     <li>Sequelize => npm install --save sequelize</li>
                     <li>Slugify => npm install --save sequelize</li>
-
                 </ul>
             </li>
         </ol>
