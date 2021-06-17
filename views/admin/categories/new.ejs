@@ -1,0 +1,21 @@
+<%- include ../../partials/header.ejs %>
+
+    <body>
+        <%- include ../../partials/navbar.ejs %>
+            <div class="container" id="new_cat" >
+                <div class="card bg-dark">
+                    <div class="card-header">
+                        <h3>Criar categoria</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="/categories/save">
+                            <input class="form-control" type="text" placeholder="Digite a categoria a ser criada"
+                                name="title"><br>
+                            <button class="btn btn-success">Cadastrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </body>
+
+<%- include ../../partials/footer.ejs %>

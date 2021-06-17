@@ -1,0 +1,51 @@
+<%- include ../../partials/header.ejs %>
+
+  <body>
+    <%- include ../../partials/navbar.ejs %>
+    <h2 >Categorias</h2>
+        <table class="table table-dark table-striped" >
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Category</th>
+              <th scope="col">Slug</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% cat.forEach(category=>{ %>
+              <tr>
+                <th style="max-width: 10%;">
+                  <%= category.id %>
+                </th>
+                <th style="max-width: 10%;">
+                  <%= category.title %>
+                </th>
+                <th style="max-width: 10%;">
+                  <%= category.slug %>
+                </th>
+                <th>
+                  <a href="/categories/edit/<%=category.id%>" class="btn btn-warning" id="bt_edit">Editar</a>
+                  <form method="POST" action="/categories/delete" style="display: inline;" onsubmit="deletarCat(event,this)">
+                    <input type="hidden" value="<%= category.id %>" name="id">
+                    <button class="btn btn-danger">Deletar</button>
+                  </form>
+                </th>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+        <a style="height: 2%; margin: 1%;" class="btn btn-success float-end " href="/admin/categories/new"> Criar categoria</a>
+
+      </body>
+  <%- include ../../partials/footer.ejs %>
+  <script>
+    function deletarCat(event,form){
+        event.preventDefault();
+        var decision=confirm('Você realmente quer deletar essa categoria?');
+        if(decision){
+          form.submit();
+        }
+      }
+
+  </script>
