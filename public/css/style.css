@@ -1,0 +1,31 @@
+body{
+    background-color: rgba(128, 126, 126, 0.301);
+}
+#new_cat{
+    color: rgb(255, 255, 255);
+}
+#navbarNavDropdown{
+    text-align: center;
+}
+
+#item_nav {
+    padding: 0%;
+}
+@media( max-width : 600px) {
+    #navbarNavDropdown li{
+        border-bottom: rgba(255, 255, 255, 0.116) 1px solid;
+    }
+    #navbarNavDropdown li:hover{
+        transition: 0.3s;
+        font-weight: 1000;
+        font-size: 12pt;
+
+        }
+       
+    }
+#navbarNavDropdown .dropdown-item:hover{
+    font-weight: 600;
+}
+body{
+    color: rgb(0, 0, 0);
+}
