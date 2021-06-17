@@ -1,0 +1,44 @@
+<%- include ../../partials/header.ejs %>
+
+    <body>
+        <%- include ../../partials/navbar.ejs %>
+            <div class="container" id="new_cat" >
+                <div class="card bg-dark">
+                    <div class="card-header">
+                        <h3>Novo artigo</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="/article/save">
+                            <input class="form-control" type="text" placeholder="Digite o título do artigo a ser criado"
+                                name="title" ><br>
+                                <textarea class="form-control" name="body" id="article_body" placeholder="Digite o conteúdo do artigo aqui"></textarea><br>
+                                <label >Categoria</label>
+                                <select name="category" class="form-select">
+                                    <% categories.forEach((category) =>{ %>
+                                        <option value="<%=category.id%>"><%=category.title%></option>
+                                    <% }); %>
+                                </select>
+                                <br>
+                            <button class="btn btn-success">Cadastrar</button>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </body>
+
+<%- include ../../partials/footer.ejs %>
+<script src="/tinymce/tinymce.min.js"></script>
+<script>
+tinymce.init({
+    language:'pt_BR',
+    selector:'#article_body',
+    plugins:[
+        'advlist autolink image link lists print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+    ]
+})
+
+
+</script>
+<!--https://www.tiny.cloud/get-tiny/language-packages/   :tinymce-->
+<!--https://www.tiny.cloud/get-tiny/self-hosted/         :pacote de tradução do tiny-->

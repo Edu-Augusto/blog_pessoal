@@ -1,0 +1,35 @@
+<%- include ../../partials/header.ejs %>
+<%- include ../../partials/homenav.ejs %>
+    <body>
+        <div class="container" style="margin-bottom: 2%;">
+            <% result.article.rows.forEach(article=>{%>
+                <br>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 style="color: black;">
+                                <%= article.title %>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <a class="btn btn-success" href="/<%= article.slug %>">Ler artigo</a>
+                        </div>
+                    </div>
+            <%})%>
+        </div>
+        <div class="container">
+            <div class="col col-12">
+                <% if( result.page>2 ) {%>
+                    <a class="btn btn-success" href="/articles/page/<%= result.page - 1 %>" style="float: left;"> <<< Prev </a>
+            </div>
+            <% } else if(result.page == 2){%>
+                <a class="btn btn-success" href="/" style="float: left;"> <<< Prev </a>
+            <%}%>
+            <% if(result.next) {%>
+            <div class="col col-12">
+                <a class="btn btn-success" href="/articles/page/<%= result.page + 1 %>" style="float: right;"> Next>>></a>
+            </div>
+            <% }%>
+        </div>
+
+    </body>
+<%- include ../../partials/footer.ejs %>
